@@ -272,7 +272,7 @@ const Dashboard = ({ user }: { user: User | null }) => {
           setInitiating(false);
         },
 
-        callback: (response: any) => {
+        callback: () => {
           const verifyTransaction = async () => {
             setShowModal(false);
             setVerificationState("verifying");

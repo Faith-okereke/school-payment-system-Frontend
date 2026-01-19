@@ -4,6 +4,7 @@ export interface User {
   full_name: string;
   email: string;
   username: string;
+  reg_number:string
   department?: string;
   level?: string;
 }

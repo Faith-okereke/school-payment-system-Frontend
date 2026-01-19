@@ -176,7 +176,7 @@ const Dashboard = ({ user }: { user: User | null }) => {
       if (token) {
         try {
           const res = await axios.get(
-            "http://127.0.0.1:8000/payment-history/",
+            "https://school-payment-system-jeaj.onrender.com/payment-history/",
             {
               headers: { Authorization: `Token ${token}` },
             }
@@ -214,7 +214,7 @@ const Dashboard = ({ user }: { user: User | null }) => {
       const token = localStorage.getItem("token");
       if (token) {
         try {
-          const res = await axios.get("http://127.0.0.1:8000/fee-structure/", {
+          const res = await axios.get("https://school-payment-system-jeaj.onrender.com/fee-structure/", {
             headers: { Authorization: `Token ${token}` },
           });
           setCurrentFeeStructure(res.data);
@@ -248,7 +248,7 @@ const Dashboard = ({ user }: { user: User | null }) => {
     try {
       // 1. Initiate Payment with Backend
       const response = await axios.post(
-        "http://127.0.0.1:8000/initiate-payment/",
+        "https://school-payment-system-jeaj.onrender.com/initiate-payment/",
         {
           amount: currentFeeStructure.amount,
           session: activeSession,
@@ -280,7 +280,7 @@ const Dashboard = ({ user }: { user: User | null }) => {
             try {
               // 4. Verify with Backend
               const verifyResponse = await axios.get(
-                `http://127.0.0.1:8000/verify/${ref}/`,
+                `https://school-payment-system-jeaj.onrender.com/verify/${ref}/`,
                 {
                   headers: { Authorization: `Token ${token}` },
                 }

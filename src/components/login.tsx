@@ -18,7 +18,7 @@ const LoginPage = ({ onLogin }: { onLogin: (u: User) => void }) => {
 
     try {
       // 1. Send data to Django Backend
-      const response = await axios.post("http://127.0.0.1:8000/login/", {
+      const response = await axios.post("https://school-payment-system-jeaj.onrender.com/login/", {
         username: username,
         password: pass,
       });
